@@ -31,17 +31,17 @@ class HashTableTest(unittest.TestCase):
     #     assert ht.contains('X') is True
     #     assert ht.contains('A') is False
 
-    # def test_set_and_get(self):
-    #     ht = HashTable()
-    #     ht.set('I', 1)
-    #     ht.set('V', 5)
-    #     ht.set('X', 10)
-    #     assert ht.get('I') == 1
-    #     assert ht.get('V') == 5
-    #     assert ht.get('X') == 10
-    #     assert ht.length() == 3
-    #     with self.assertRaises(KeyError):
-    #         ht.get('A')  # Key does not exist
+    def test_set_and_get(self):
+        ht = HashTable()
+        ht.set('I', 1)
+        ht.set('V', 5)
+        ht.set('X', 10)
+        assert ht.get('I') == 1
+        assert ht.get('V') == 5
+        assert ht.get('X') == 10
+        assert ht.length() == 3
+        with self.assertRaises(KeyError):
+            ht.get('A')  # Key does not exist
 
     # def test_set_twice_and_get(self):
     #     ht = HashTable()
