@@ -8,7 +8,6 @@ class HashTableTest(unittest.TestCase):
 
     def test_init(self):
         ht = HashTable(4)
-        print('This is ht:', ht)
         assert len(ht.buckets) == 4
         assert ht.length() == 0
 
@@ -37,8 +36,6 @@ class HashTableTest(unittest.TestCase):
         ht.set('I', 1)
         ht.set('V', 5)
         ht.set('X', 10)
-        print('This is ht:', ht)
-        print('This is ht.length():', ht.length())
         # assert ht.get('I') == 1
         # assert ht.get('V') == 5
         # assert ht.get('X') == 10
