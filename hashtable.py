@@ -1,6 +1,6 @@
 #!/usr/bin/python2
 
-from linkedlist import LinkedList
+from linkedlist import LinkedList, Node
 
 
 class HashTable(object):
@@ -48,8 +48,11 @@ class HashTable(object):
     def set(self, key, value):
         """Insert or update the given key with its associated value"""
         # TODO 1: Insert or update the given key-value entry into a bucket
-        bucket = self._bucket_index('I')
-        print(bucket)
+        hash_table_index = self._bucket_index('I')
+        print('This is hash_table_index:', hash_table_index)
+        self.buckets[hash_table_index] = Node(value)
+        self.counter += 1
+        print('This is self.buckets[hash_table_index]:', self.buckets[hash_table_index])
         pass
 
     def delete(self, key):
