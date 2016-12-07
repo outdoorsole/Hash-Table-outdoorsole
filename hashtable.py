@@ -32,7 +32,9 @@ class HashTable(object):
     def get(self, key):
         """Return the value associated with the given key, or raise KeyError"""
         # TODO 2: Check if the given key exists and return its associated value
-        pass
+        hash_table_index = self._bucket_index(key)
+        value = self.buckets[hash_table_index].data
+        return value
 
     def set(self, key, value):
         """Insert or update the given key with its associated value"""
