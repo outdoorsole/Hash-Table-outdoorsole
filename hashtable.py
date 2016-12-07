@@ -7,9 +7,10 @@ class HashTable(object):
 
     def __init__(self, init_size=8):
         """Initialize this hash table with the given initial size"""
+        self.buckets = [LinkedList() for i in range(init_size)]
         """This will keep track of the length of the hash table"""
         self.counter = 0
-        self.buckets = [LinkedList() for i in range(init_size)]
+        
 
         print('This is self:', self)
         print('This is init_size:', init_size)
@@ -21,6 +22,12 @@ class HashTable(object):
 
     def _bucket_index(self, key):
         """Return the bucket index where the given key would be stored"""
+        print('This is self:', self)
+        print('This is key:', key)
+        index = hash(key) % len(self.buckets)
+        print('This is hash(key):', hash(key))
+        print('This is self.buckets:', len(self.buckets))
+        print('This is index:', index)
         return hash(key) % len(self.buckets)
 
     def length(self):
@@ -41,6 +48,8 @@ class HashTable(object):
     def set(self, key, value):
         """Insert or update the given key with its associated value"""
         # TODO 1: Insert or update the given key-value entry into a bucket
+        bucket = self._bucket_index('I')
+        print(bucket)
         pass
 
     def delete(self, key):
