@@ -34,15 +34,10 @@ class HashTable(object):
         # TODO 2: Check if the given key exists and return its associated value
         hash_table_index = self._bucket_index(key)
         print('This is hash_table_index:', hash_table_index)
-        for index in self.buckets:
-            print('This is index:', index)
-            print('This is self.buckets:', self.buckets)
-            # if hash_table_index:
-
-            # value = self.buckets[hash_table_index].data
-            # return value
-        # else:
-            # raise KeyError('Key does not exist!', key)
+        data = self.buckets[hash_table_index].find(lambda x: x[0] == key)
+        if not data:
+            raise KeyError('Key does not exist!')
+        return data[1]
 
     def set(self, key, value):
         """Insert or update the given key with its associated value"""
