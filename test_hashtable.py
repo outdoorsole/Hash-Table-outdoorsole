@@ -43,18 +43,18 @@ class HashTableTest(unittest.TestCase):
         with self.assertRaises(KeyError):
             ht.get('A')  # Key does not exist
 
-    # def test_set_twice_and_get(self):
-    #     ht = HashTable()
-    #     ht.set('I', 1)
-    #     ht.set('V', 4)
-    #     ht.set('X', 9)
-    #     assert ht.length() == 3
-    #     ht.set('V', 5)  # Update value
-    #     ht.set('X', 10)  # Update value
-    #     assert ht.get('I') == 1
-    #     assert ht.get('V') == 5
-    #     assert ht.get('X') == 10
-    #     assert ht.length() == 3  # Check length is not overcounting
+    def test_set_twice_and_get(self):
+        ht = HashTable()
+        ht.set('I', 1)
+        ht.set('V', 4)
+        ht.set('X', 9)
+        assert ht.length() == 3
+        ht.set('V', 5)  # Update value
+        ht.set('X', 10)  # Update value
+        assert ht.get('I') == 1
+        assert ht.get('V') == 5
+        assert ht.get('X') == 10
+        assert ht.length() == 3  # Check length is not overcounting
 
     # def test_delete(self):
     #     ht = HashTable()
