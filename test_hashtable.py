@@ -11,15 +11,15 @@ class HashTableTest(unittest.TestCase):
         assert len(ht.buckets) == 4
         assert ht.length() == 0
 
-    # def test_length(self):
-    #     ht = HashTable()
-    #     assert ht.length() == 0
-    #     ht.set('I', 1)
-    #     assert ht.length() == 1
-    #     ht.set('V', 5)
-    #     assert ht.length() == 2
-    #     ht.set('X', 10)
-    #     assert ht.length() == 3
+    def test_length(self):
+        ht = HashTable()
+        assert ht.length() == 0
+        ht.set('I', 1)
+        assert ht.length() == 1
+        ht.set('V', 5)
+        assert ht.length() == 2
+        ht.set('X', 10)
+        assert ht.length() == 3
 
     # def test_contains(self):
     #     ht = HashTable()
