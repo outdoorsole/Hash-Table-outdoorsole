@@ -31,9 +31,8 @@ class HashTable(object):
 
     def get(self, key):
         """Return the value associated with the given key, or raise KeyError"""
-        # TODO 2: Check if the given key exists and return its associated value
+        # Generate the index within the hash table by hashing the key
         hash_table_index = self._bucket_index(key)
-        print('This is hash_table_index:', hash_table_index)
         data = self.buckets[hash_table_index].find(lambda x: x[0] == key)
         if not data:
             raise KeyError('Key does not exist!')
