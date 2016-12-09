@@ -24,10 +24,14 @@ class HashTable(object):
         # TODO 4: Count number of key-value entries in each of the buckets
         return self.counter
 
-    def contains(self):
+    def contains(self, key):
         """Return True if this hash table contains the given key, or False"""
-        # TODO 3: Check if the given key exists in a bucket
-        pass
+        hash_table_index = self._bucket_index(key)
+        # Check if the given key exists in a bucket
+        if self.buckets[hash_table_index].find(lambda x: x[0] == key):
+            return True
+        return False
+
 
     def get(self, key):
         """Return the value associated with the given key, or raise KeyError"""

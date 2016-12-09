@@ -21,15 +21,15 @@ class HashTableTest(unittest.TestCase):
         ht.set('X', 10)
         assert ht.length() == 3
 
-    # def test_contains(self):
-    #     ht = HashTable()
-    #     ht.set('I', 1)
-    #     ht.set('V', 5)
-    #     ht.set('X', 10)
-    #     assert ht.contains('I') is True
-    #     assert ht.contains('V') is True
-    #     assert ht.contains('X') is True
-    #     assert ht.contains('A') is False
+    def test_contains(self):
+        ht = HashTable()
+        ht.set('I', 1)
+        ht.set('V', 5)
+        ht.set('X', 10)
+        assert ht.contains('I') is True
+        assert ht.contains('V') is True
+        assert ht.contains('X') is True
+        assert ht.contains('A') is False
 
     def test_set_and_get(self):
         ht = HashTable()
