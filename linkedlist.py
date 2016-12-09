@@ -109,6 +109,16 @@ class LinkedList(object):
         found_node = self.__findNode(quality)
         return found_node.data if found_node else None
 
+    def set(self, quality, value):
+        found_node = self.__findNode(quality)
+        """ Node does not exist, did not find it in the list"""
+        if found_node is None:
+            self.append(value)
+            return None
+        """ Update a node"""
+        found_node.data = value
+        return self
+
 
 def test_linked_list():
     ll = LinkedList()

@@ -33,16 +33,25 @@ class HashTable(object):
         """Return the value associated with the given key, or raise KeyError"""
         # TODO 2: Check if the given key exists and return its associated value
         hash_table_index = self._bucket_index(key)
-        value = self.buckets[hash_table_index].data
-        return value
+        print('This is hash_table_index:', hash_table_index)
+        for index in self.buckets:
+            print('This is index:', index)
+            print('This is self.buckets:', self.buckets)
+            # if hash_table_index:
+
+            # value = self.buckets[hash_table_index].data
+            # return value
+        # else:
+            # raise KeyError('Key does not exist!', key)
 
     def set(self, key, value):
         """Insert or update the given key with its associated value"""
-        # TODO 1: Insert or update the given key-value entry into a bucket
-        hash_table_index = self._bucket_index(key)
-        self.buckets[hash_table_index] = Node(value)
-        self.counter += 1
-        pass
+        index = self._bucket_index(key)
+        data = (key, value)
+
+        updated = self.buckets[index].set(lambda x: x[0] == key, data)
+        if not updated:
+            self.counter += 1
 
     def delete(self, key):
         """Delete the given key from this hash table, or raise KeyError"""
