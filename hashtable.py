@@ -32,7 +32,6 @@ class HashTable(object):
             return True
         return False
 
-
     def get(self, key):
         """Return the value associated with the given key, or raise KeyError"""
         # Generate the index within the hash table by hashing the key
@@ -53,8 +52,15 @@ class HashTable(object):
 
     def delete(self, key):
         """Delete the given key from this hash table, or raise KeyError"""
-        # TODO (last): Find the given key and delete its entry if found
-        pass
+        hash_table_index = self._bucket_index(key)
+        # Find the given key and delete its entry if found
+        data = self.buckets[hash_table_index].find(lambda x: x[0] == key)
+        print data
+        if data is not None:
+            self.buckets[hash_table_index].delete(data)
+            self.counter -= 1
+        print self
+
 
     def keys(self):
         """Return a list of all keys in this hash table"""
