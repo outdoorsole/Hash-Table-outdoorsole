@@ -65,10 +65,10 @@ class HashTableTest(unittest.TestCase):
         ht.delete('I')
         ht.delete('X')
         assert ht.length() == 1
-        # with self.assertRaises(KeyError):
-        #     ht.delete('X')  # Key no longer exists
-        # with self.assertRaises(KeyError):
-        #     ht.delete('A')  # Key does not exist
+        with self.assertRaises(KeyError):
+            ht.delete('X')  # Key no longer exists
+        with self.assertRaises(KeyError):
+            ht.delete('A')  # Key does not exist
 
     # def test_keys(self):
     #     ht = HashTable()

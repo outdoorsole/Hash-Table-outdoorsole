@@ -55,12 +55,11 @@ class HashTable(object):
         hash_table_index = self._bucket_index(key)
         # Find the given key and delete its entry if found
         data = self.buckets[hash_table_index].find(lambda x: x[0] == key)
-        print data
         if data is not None:
             self.buckets[hash_table_index].delete(data)
             self.counter -= 1
-        print self
-
+        else:
+            raise KeyError('Key does not exist!', key)
 
     def keys(self):
         """Return a list of all keys in this hash table"""
